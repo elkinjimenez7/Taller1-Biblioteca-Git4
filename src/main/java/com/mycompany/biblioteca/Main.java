@@ -104,6 +104,24 @@ public class Main {
             javax.swing.JOptionPane.showMessageDialog(null, "No se pudo actualizar. Cliente con CC " + searchCc + " no encontrado");
         }
     }
+    
+    public void deleteCustomer(String searchCc){
+        boolean found = false;
+        
+        for (int i = 0; i < customer.size(); i++){
+            Customer c = customer.get(i);
+            
+            if (c.getCc().equals(searchCc)){
+                customer.remove(i);
+                
+                found = true;
+                javax.swing.JOptionPane.showMessageDialog(null, "Cliente eliminado con exito");
+            }
+        }
+        if (!found){
+            javax.swing.JOptionPane.showMessageDialog(null, "No se pudo eliminar. Cliente con CC" + searchCc + " no encontrado");
+        }
+    }
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
