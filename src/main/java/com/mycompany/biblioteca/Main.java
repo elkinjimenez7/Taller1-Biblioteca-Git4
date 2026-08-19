@@ -85,6 +85,25 @@ public class Main {
         table.setModel(model);
        
     }
+    
+    public void updateCustomer(String searchCc, String newKindCustomer, int newAge){
+        boolean found = false;
+        
+        for (Customer c : customer){
+            
+            if (c.getCc().equals(searchCc)){
+                
+                c.setKindCustomer(newKindCustomer);
+                c.setAge(newAge);
+                
+                found = true;
+                javax.swing.JOptionPane.showMessageDialog(null, "datos del cliente actualizados con exito");
+            }
+        }   
+        if (!found){
+            javax.swing.JOptionPane.showMessageDialog(null, "No se pudo actualizar. Cliente con CC " + searchCc + " no encontrado");
+        }
+    }
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
